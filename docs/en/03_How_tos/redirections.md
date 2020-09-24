@@ -37,7 +37,7 @@ RewriteCond %{HTTP_HOST} ^my\.domain\.govt\.nz$
 RewriteCond %{HTTPS} !=on
 Rewritecond %{HTTP:X-Forwarded-Proto} !https [NC]
 RewriteCond %{REQUEST_URI} ^/(?:public/)?(.*)$ [NC]
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/%1 [L,R=301]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
 ```
 
 This will then force all traffic to redirect to HTTPS on `my.domain.govt.nz`.
